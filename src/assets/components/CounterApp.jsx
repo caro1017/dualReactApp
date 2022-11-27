@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import Boton from './layout/Boton'
 import DisplayNumber from './layout/DisplayNumber'
+import './CounterApp.css'
 
 const CounterApp = () => {
     // const [state,setState] = useState (estadoInicial)
@@ -19,13 +20,13 @@ const CounterApp = () => {
     }
 
   return (
-    <div>
+    <div className='counter'>
         <h2 className='text-3xl'>CounterApp</h2>
         <DisplayNumber>{display}</DisplayNumber>
         <div>
-            <Boton funcion={decrement} > - </Boton>
-            <Boton funcion={reset}> Reset </Boton>
-            <Boton funcion={increment}> + </Boton>
+            <Boton funcion={decrement} > <i class='bx bx-chevron-down'></i> </Boton>
+            <Boton funcion={reset}> <i class='bx bx-reset bx-spin bx-flip-horizontal' ></i></Boton>
+            <Boton funcion={increment}>  <i class='bx bx-chevron-up'></i></Boton>
         </div>
     </div>
   )

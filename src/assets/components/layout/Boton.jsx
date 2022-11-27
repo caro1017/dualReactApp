@@ -4,13 +4,15 @@ const Boton = ({children,funcion}) => {
   return (
     <button 
     className='
-    px-2 
-    py-1
-    bg-emerald-800 
+    p-2
+    w-12
+    m-2
     border 
     text-white
     text-xl
-    rounded'
+    rounded-xl
+    hover:bg-slate-700
+    '
     onClick={funcion}>{children}</button>
   )
 }

@@ -2,7 +2,9 @@ import React from 'react'
 
 const DisplayNumber = ({children}) => {
   return (
-    <h2 className='display'>{children}</h2>
+    <div  className='display'>
+      <h2>{children}</h2>
+    </div>
   )
 }
 

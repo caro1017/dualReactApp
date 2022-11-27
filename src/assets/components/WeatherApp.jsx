@@ -3,12 +3,13 @@ import './WeatherApp.css'
 import styled from 'styled-components'
 
 const Boton = styled.button`
-  width: 100%;
-  background-color: blue;
+  width: 60%;
+  background-color: transparent;
   color: white;
-  margin-top:1rem;
-  border:none;
+  border: 1px solid white;
   border-radius:4px;
+  margin-left:1rem;
+  padding:0.4rem;
 `
 
 const Input = styled.input`
@@ -29,12 +30,14 @@ const WatherApp = () => {
     fetch(url)
       .then(response => response.json())
       .then(weather => setTemperature(weather.main.temp))
+      console.log(url)
+      
   }
 
   console.log(temperature);
 
   return (
-    <div>
+    <div className='weather'>
         <h2>Weather App</h2>
         <form onSubmit={queryTemperature}>
           < Input  
@@ -49,7 +52,6 @@ const WatherApp = () => {
         :null} */}
         {/* Operador de corto circuito */}
         {temperature !== null && <div><h2 className='temp'>{temperature}°C</h2></div>}
-
     </div>
   )
 }

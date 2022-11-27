@@ -9,7 +9,7 @@ function App() {
       <h1> My Dual React App</h1>
       <div className='container'>
         <CounterApp/>
-        <WeatherApp></WeatherApp>
+        <WeatherApp/>
       </div>
     </div>
   )
