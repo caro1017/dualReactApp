@@ -1,5 +1,6 @@
 import './App.css'
 import CounterApp from './assets/components/CounterApp'
+import Autor from './assets/components/layout/Autor'
 import WeatherApp from './assets/components/WeatherApp'
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
         <CounterApp/>
         <WeatherApp/>
       </div>
+      <Autor/>
     </div>
   )
 }

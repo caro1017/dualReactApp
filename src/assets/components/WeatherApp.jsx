@@ -20,7 +20,10 @@ const Input = styled.input`
 `
 
 const WatherApp = () => {
-  const [temperature,setTemperature] =useState(null)
+
+  const [datos,setDatos] = useState(null)
+  
+
 
   function queryTemperature(e){
     e.preventDefault()
@@ -29,12 +32,15 @@ const WatherApp = () => {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`
     fetch(url)
       .then(response => response.json())
-      .then(weather => setTemperature(weather.main.temp))
+      .then(weather => setDatos({
+        temperatura : weather.main.temp,
+        humedad: weather.main.humidity,
+        nombre: weather.name,
+        icono: weather.weather[0].icon,
+      }))
       console.log(url)
       
   }
-
-  console.log(temperature);
 
   return (
     <div className='weather'>
@@ -51,9 +57,19 @@ const WatherApp = () => {
         ?<div><h2>{temperature}°C</h2></div>
         :null} */}
         {/* Operador de corto circuito */}
-        {temperature !== null && <div><h2 className='temp'>{temperature}°C</h2></div>}
+        {/* {temperature !== null && <div><h2 className='temp'>{temperature}°C</h2></div>} */}
+        
+        <div className='contenido_clima'> 
+        {datos !== null && <div><h2>{datos.nombre}</h2></div> }
+        {datos !== null && <img src={`http://openweathermap.org/img/wn/${datos.icono}@2x.png`}/>}
+        <div className="estado">
+        {datos !== null && <div><h3>{datos.temperatura}°C</h3></div> }
+        {datos !== null && <div><h4> Humedad: {datos.humedad}%</h4></div>}   
+        </div>   
+        </div>
     </div>
   )
 }
 
 export default WatherApp
+

@@ -32,3 +32,9 @@ input, .submit{
   font-size: 5rem;
   font-weight: 600;
 }
+
+.autor{
+  color: white;
+  text-align: center;
+  margin-top: 4rem;
+}
